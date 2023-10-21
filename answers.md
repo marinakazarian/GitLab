@@ -43,6 +43,8 @@ What branches would change, and how?
 git checkout test
 git merge top_N
 ```
+top_N gets merged into the test branch, with its changes to the 
+process_movie_data.py file getting incorporated into the test branch. 
 
 6. What do you think would happen if you ran the following commands?
 What branches would change, and how?
@@ -50,6 +52,8 @@ What branches would change, and how?
 git checkout top_ten
 git merge test
 ```
+There was a merge conflict with the process_movie_data.py file, so the merge 
+failed.
 
 7. What do you think would happen if you ran the following commands?
 What branches would change, and how?
@@ -58,3 +62,5 @@ git checkout test
 git rebase top_ten
 git rebase top_N
 ```
+The rebases successfully updated the head of the git graph structure to be test, 
+with the top_ten and top_N branches coming off of it.
