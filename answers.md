@@ -64,3 +64,15 @@ git rebase top_N
 ```
 The rebases successfully updated the head of the git graph structure to be test, 
 with the top_ten and top_N branches coming off of it.
+
+Extra credit:
+I explored git archive and git gc. 
+From https://github.com/Adetona/cool-git-commands, I learned that git archive 
+can make a tar file with the contents of a tree in your git repository, and git 
+gc is a garbage collector that optimizes your repository.
+On the extraCredit branch, I ran: 
+git archive --output=./repo_archive.tar --format=tar HEAD
+I pushed the generated output file upstream of the origin.
+I also ran:
+git gc
+This resulted in a terminal output detailing object compression, etc.
