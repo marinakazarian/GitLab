@@ -10,13 +10,19 @@ long as you list those resources (e.g. peers, websites, etc.)
 xanda_0000_movie_processing?
 (For this and future questions, the first 5 characters is plenty - neither
 Git nor I need the whole SHA.)
+9b257
 
 2. What is the SHA for the last commit associated with line 9 of this file?
+b2ed3
 
 3. What did line 12 of this file say in commit d1d83?
+"2. I should really finish writing this."
 
 4. What changed between commit e474c and 82045?
-
+"gross_sort = lambda x : x["Gross"]" became: 
+"gross_sort = lambda x : int(x["Gross"])"
+"top_five = rows[:-5:-1]" became: 
+"top_five = rows[:-6:-1]"
 ## Predicting merges
 
 Assume at the start of each of these three questions that your
@@ -37,6 +43,8 @@ What branches would change, and how?
 git checkout test
 git merge top_N
 ```
+top_N gets merged into the test branch, with its changes to the 
+process_movie_data.py file getting incorporated into the test branch. 
 
 6. What do you think would happen if you ran the following commands?
 What branches would change, and how?
@@ -44,6 +52,8 @@ What branches would change, and how?
 git checkout top_ten
 git merge test
 ```
+There was a merge conflict with the process_movie_data.py file, so the merge 
+failed.
 
 7. What do you think would happen if you ran the following commands?
 What branches would change, and how?
@@ -52,3 +62,5 @@ git checkout test
 git rebase top_ten
 git rebase top_N
 ```
+The rebases successfully updated the head of the git graph structure to be test, 
+with the top_ten and top_N branches coming off of it.
